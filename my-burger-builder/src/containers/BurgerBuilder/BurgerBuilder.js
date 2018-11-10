@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Aux from '../../hoc/Auxiliary';
+import Burger from '../../components/Burger/Burger';
 
 class BurgerBuilder extends Component {
 
@@ -8,10 +9,8 @@ class BurgerBuilder extends Component {
         //graphical representation of the burger
         //The area where I need to add or remove Ingredients
         return (
-            <Aux>
-               
-                <div>Burger</div>
-                <div>Build Controls</div>
+            <Aux>             
+                <Burger/>
             </Aux>
         );
     };
