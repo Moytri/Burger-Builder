@@ -80,7 +80,11 @@ class BurgerBuilder extends Component {
     }
 
     purchaseHandler = () => {
-        return this.setState({purchasing: true});
+        this.setState({purchasing: true});
+    }
+
+    purchaseCancelHandler = () => {
+        this.setState({purchasing: false});
     }
 
     render() {
@@ -99,8 +103,8 @@ class BurgerBuilder extends Component {
         //The area where I need to add or remove Ingredients
         return (
             <Aux>  
-                <Modal show={this.state.purchasing}>
-                    <OrderSummary ingredients={this.state.ingredients} />
+                <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
+                    <OrderSummary ingredients={this.state.ingredients}/>
                 </Modal>        
                 <Burger ingredients={this.state.ingredients}/>
                 <BuildControls ingredientAdded={this.addIngredientHandler}
